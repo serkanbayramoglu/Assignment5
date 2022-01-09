@@ -15,8 +15,8 @@ phases:
 #    - mvn package
 #    - mv target/SimpleCalculator-0.0.1-SNAPSHOT.war SimpleCalculator-0.0.1-SNAPSHOT.war
 #artifacts:
-#  files:
-#  - SimpleCalculator-0.0.1-SNAPSHOT.war
+  files:
+  - SimpleCalculator-0.0.1-SNAPSHOT.war
 #  - .ebextensions/**/*
 
 
