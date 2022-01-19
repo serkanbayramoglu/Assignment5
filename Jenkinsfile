@@ -1,26 +1,34 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCOUNT_ID="294646511689"
-        AWS_DEFAULT_REGION="us-west-2" 
-	CLUSTER_NAME="default"
-	SERVICE_NAME="nodejs-container-service"
-	TASK_DEFINITION_NAME="first-run-task-definition"
-	DESIRED_COUNT="1"
-        IMAGE_REPO_NAME="demo"
-        IMAGE_TAG="${env.BUILD_ID}"
-        REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-	registryCredential = "demo-admin-user"
+        	AWS_ACCOUNT_ID="294646511689"
+        	AWS_DEFAULT_REGION="us-west-2" 
+		CLUSTER_NAME="default"
+		SERVICE_NAME="nodejs-container-service"
+		TASK_DEFINITION_NAME="first-run-task-definition"
+		DESIRED_COUNT="1"
+        	IMAGE_REPO_NAME="demo"
+        	IMAGE_TAG="${env.BUILD_ID}"
+        	REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+		registryCredential = "demo-admin-user"
     }
    
     stages {
+    // compilation and analysis
+    stage('Compilation and Analysis') {
+      steps{
+        script {
+          	sh 'sudo fuser -k 443/tcp || true'
+	  	sh 'mvn clean install -DskipTests'
+        }
+      }
+    }
 
     // Tests
     stage('Unit Tests') {
       steps{
         script {
-          sh 'mvn install'
-	  sh 'mvnw test -- --watchAll=false'
+		sh 'mvn test -Punit'
         }
       }
     }
