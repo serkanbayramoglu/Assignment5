@@ -4,13 +4,13 @@ pipeline {
         	AWS_ACCOUNT_ID="294646511689"
         	AWS_DEFAULT_REGION="us-west-2" 
 		CLUSTER_NAME="default"
-		SERVICE_NAME="nodejs-container-service"
+		SERVICE_NAME="spring-boot-container-service"
 		TASK_DEFINITION_NAME="first-run-task-definition"
 		DESIRED_COUNT="1"
-        	IMAGE_REPO_NAME="demo"
+        	IMAGE_REPO_NAME="simple-calculator"
         	IMAGE_TAG="${env.BUILD_ID}"
         	REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-		registryCredential = "demo-admin-user"
+		registryCredential = "admin-user"
     }
    
     stages {
