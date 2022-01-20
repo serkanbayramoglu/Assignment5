@@ -8,6 +8,14 @@
 
 	<h1>Hello welcome to Simple Calculator</h1>
 
+	<br />
+	<h2>Please log in</h2>
+	<form action="login" method="post">
+		User Name <input type="text" name="username" /> Password <input
+			type="text" name="password" /> <input type="submit" value="Login" />
+	</form>
+	<span style="color: red" th:text="${errorMessage}" />
+	<br />	
 
 </body>
 </html>

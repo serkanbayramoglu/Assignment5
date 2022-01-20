@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>CalculatorScreen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+	<h1>Welcome <span th:text="${firstname} + ' ' + ${lastname}" /> </h1>
+
+	<h2>Please proceed with your calculations</h2>
+	
+
+
+
+	<h2>E - Logout</h2>	
+	<form action="/" method="post">
+		<input type="submit" value="Click" /><a> to log out</a>
+	</form>	
+	
+</body>
+</html>
