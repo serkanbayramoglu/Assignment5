@@ -3,17 +3,51 @@
 <head>
 <title>CalculatorScreen</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
 </head>
-<body>
+<body >
 	
 	<h1>Welcome <span th:text="${firstname} + ' ' + ${lastname}" /> </h1>
 
-	<h2>Please proceed with your calculations</h2>
+	<h2>Simple Calculator</h2>
 	
-
-
-
-	<h2>E - Logout</h2>	
+	<table border="5" width="500px" height="300px">
+		<tr>
+			<td colspan="4"><input type="text" id="result"/></td>
+		</tr>
+		<tr>
+			<td width="25%"><input type="button" value="AC/C" onclick="clr()"/> </td>
+			<td width="25%"><input type="button" value="+/-" onclick="negate()"/> </td>
+			<td width="25%"><input type="button" value="%" onclick="perc()"/> </td>
+			<td width="25%"><input type="button" value="/" id="divide" onclick="operator('divide')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="dis('7')"/> </td>
+			<td><input type="button" value="8" onclick="dis('8')"/> </td>
+			<td><input type="button" value="9" onclick="dis('9')"/> </td>
+			<td><input type="button" value="x" id="multiply" onclick="operator('multiply')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="dis('4')"/> </td>
+			<td><input type="button" value="5" onclick="dis('5')"/> </td>
+			<td><input type="button" value="6" onclick="dis('6')"/> </td>
+			<td><input type="button" value="-" id="subtract" onclick="operator('subtract')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="dis('7')"/> </td>
+			<td><input type="button" value="2" onclick="dis('8')"/> </td>
+			<td><input type="button" value="3" onclick="dis('9')"/> </td>
+			<td><input type="button" value="+" id="add" onclick="operator('add')"/> </td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" value="0" onclick="dis('0')"/> </td>
+			<td><input type="button" value="." onclick="dis('.')"/> </td>
+			<td ><input type="button" value="=" onclick="solve()"/> </td>
+		</tr>
+	</table>
+	<br>
+	<h2>Logout</h2>	
 	<form action="/" method="post">
 		<input type="submit" value="Click" /><a> to log out</a>
 	</form>	
