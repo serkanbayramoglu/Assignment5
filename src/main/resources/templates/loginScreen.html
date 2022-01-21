@@ -7,13 +7,18 @@
 <body>
 
 	<h1>Hello welcome to Simple Calculator</h1>
-
+	<p>This is a simple calculator program prepared as part of an assignment to demonstrate building a CI/CD pipeline using Spring Boot, Dockers, Jenkins and AWS</p>
+	<br />
+	<p>The usernames and passwords to enter the calculator program are:</p>
+	<p>user1 - pass1</p>
+	<p>user2 - pass2</p> 
 	<br />
 	<h2>Please log in</h2>
 	<form action="login" method="post">
 		User Name <input type="text" name="username" /> Password <input
 			type="text" name="password" /> <input type="submit" value="Login" />
 	</form>
+	<br />
 	<span style="color: red" th:text="${errorMessage}" />
 	<br />	
 
